@@ -18,11 +18,8 @@ public class ViewController {
 
         Vector<MenuItem> menuItems = menu.getItems();
         Order order = new Order();
-//        Vector<MenuItem> selectedMenuItems = new Vector<>();
-//        Vector<Integer> selectedMenuItemsIDs = new Vector<>();
         for(int i = 0; i < 3; i++) {
-            order.getItems().add(menuItems.elementAt(i));
-            order.getItemsIDs().add(menuItems.elementAt(i).getID());
+            order.add(menuItems.elementAt(i), menuItems.elementAt(i).getID());
         }
         menu.orderMeal(order.getItemsIDs(), selectedTableID);
         System.out.println("You have ordered following menu items:");
