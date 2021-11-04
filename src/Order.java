@@ -17,4 +17,11 @@ public class Order {
     public Vector<Integer> getItemsIDs() {
         return this.itemsIDs;
     }
+    public double getCost() {
+        double cost = 0;
+        for(MenuItem menuItem : this.items) {
+            cost += menuItem.getCost();
+        }
+        return cost;
+    }
 }

@@ -29,5 +29,6 @@ public class ViewController {
         for(MenuItem menuItem : order.getItems()) {
             System.out.printf("$%f - %s\n", menuItem.getCost(), menuItem.getDescription());
         }
+        System.out.printf("The overall price is $%s", order.getCost());
     }
 }
