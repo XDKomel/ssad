@@ -1,6 +1,7 @@
 import java.awt.Image;
 import java.util.Vector;
 
+
 public abstract class MenuItem {
     private int ID;
     private String description;
@@ -32,6 +33,8 @@ public abstract class MenuItem {
 
     abstract public double getCost();
 }
+
+
 
 class SingleMenuItem extends MenuItem {
 

@@ -17,15 +17,16 @@ public class ViewController {
         System.out.printf("You have reserved table # %d\n", selectedTableID);
 
         Vector<MenuItem> menuItems = menu.getItems();
-        Vector<MenuItem> selectedMenuItems = new Vector<>();
-        Vector<Integer> selectedMenuItemsIDs = new Vector<>();
+        Order order = new Order();
+//        Vector<MenuItem> selectedMenuItems = new Vector<>();
+//        Vector<Integer> selectedMenuItemsIDs = new Vector<>();
         for(int i = 0; i < 3; i++) {
-            selectedMenuItems.add(menuItems.elementAt(i));
-            selectedMenuItemsIDs.add(menuItems.elementAt(i).getID());
+            order.getItems().add(menuItems.elementAt(i));
+            order.getItemsIDs().add(menuItems.elementAt(i).getID());
         }
-        menu.orderMeal(selectedMenuItemsIDs, selectedTableID);
+        menu.orderMeal(order.getItemsIDs(), selectedTableID);
         System.out.println("You have ordered following menu items:");
-        for(MenuItem menuItem : selectedMenuItems) {
+        for(MenuItem menuItem : order.getItems()) {
             System.out.printf("$%f - %s\n", menuItem.getCost(), menuItem.getDescription());
         }
     }
